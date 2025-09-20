@@ -26,6 +26,8 @@ require("lazy").setup({
 	spec = {
 		-- LSP config is by far the easiest way to configure ocaml-lsp in neovim
 		"neovim/nvim-lspconfig",
+		-- Conform is a good formatting plugin that supports ocamlformat out of the box
+		"stevearc/conform.nvim",
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
@@ -36,3 +38,17 @@ require("lazy").setup({
 
 -- Enable the ocaml lsp
 vim.lsp.enable("ocamllsp")
+
+-- Use ocamlformat for formatting (as usual, you need to make sure it's installed in the switch and
+-- you have a .ocamlformat file in the project)
+require("conform").setup({
+	formatters_by_ft = {
+		ocaml = { "ocamlformat" },
+	},
+	-- Optional: Let's format on save
+	format_on_save = {
+		-- These options will be passed to conform.format()
+		timeout_ms = 500,
+		lsp_format = "fallback",
+	},
+})
