@@ -28,6 +28,26 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		-- Conform is a good formatting plugin that supports ocamlformat out of the box
 		"stevearc/conform.nvim",
+		-- While the built-in completion works fine with OCaml, I prefer to use plugins like blink
+		{
+			"saghen/blink.cmp",
+			version = "1.*",
+			---@module 'blink.cmp'
+			---@type blink.cmp.Config
+			opts = {
+				keymap = {
+					preset = "enter",
+					["<S-Tab>"] = { "select_prev", "fallback" },
+					["<Tab>"] = { "select_next", "fallback" },
+					["<CR>"] = { "select_and_accept", "fallback" },
+				},
+				completion = { documentation = { auto_show = false } },
+				sources = {
+					default = { "lsp", "path", "snippets", "buffer" },
+				},
+			},
+			opts_extend = { "sources.default" },
+		},
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
@@ -37,6 +57,8 @@ require("lazy").setup({
 })
 
 -- Enable the ocaml lsp
+-- see https://neovim.io/doc/user/lsp.html#_global-defaults and https://neovim.io/doc/user/lsp.html#_buffer-local-defaults
+-- to know what's available.
 vim.lsp.enable("ocamllsp")
 
 -- Use ocamlformat for formatting (as usual, you need to make sure it's installed in the switch and
