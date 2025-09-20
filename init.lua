@@ -23,10 +23,16 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-	spec = {},
+	spec = {
+		-- LSP config is by far the easiest way to configure ocaml-lsp in neovim
+		"neovim/nvim-lspconfig",
+	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
+
+-- Enable the ocaml lsp
+vim.lsp.enable("ocamllsp")
