@@ -1,4 +1,4 @@
-# nvim-ocaml-starter-pack
+# neovim-ocaml-quickstart
 
 This is a starter pack for OCaml development in Neovim. It provides a minimal but effective setup for OCaml development, including LSP support, formatting, and completion.
 
