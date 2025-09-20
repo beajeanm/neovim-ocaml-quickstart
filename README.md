@@ -31,3 +31,8 @@ This is a starter pack for OCaml development in Neovim. It provides a minimal bu
 ## Configuration
 
 The configuration is in the `init.lua` file. You can customize it to your liking.
+
+## Where to go from here?
+
+* This configuration is done in a single file, as your neovim config grow, it will be easier to manage if you use a structured directory approach. [The Only Video You Need to Get Started with Neovim](https://youtu.be/m8C0Cq9Uv9o?si=FYYXmVNKYd18RD5F)
+* Many plugins have OCaml support, give them a try. See for example [Friendly snippets](https://github.com/rafamadriz/friendly-snippets) or [Text object](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
