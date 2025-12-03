@@ -4,7 +4,7 @@ This is a starter pack for OCaml development in Neovim. It provides a minimal bu
 
 ## Features
 
-*   **LSP Support**: Integrated with `ocamllsp` for features like go-to-definition, type hints, and more.
+*   **LSP/Merlin Support**: Integrated with `ocamllsp` and `ocaml.nvim` for features like go-to-definition, type hints, and more.
 *   **Formatting**: Uses `ocamlformat` to automatically format your code on save.
 *   **Completion**: Provides completion with `blink.cmp`.
 *   **Plugin Management**: Uses `lazy.nvim` for easy plugin management.

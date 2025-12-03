@@ -28,6 +28,13 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		-- Conform is a good formatting plugin that supports ocamlformat out of the box
 		"stevearc/conform.nvim",
+		-- Add ocaml.nvim, it closes the gap between merlin and what lsp supports.
+		{
+			"tarides/ocaml.nvim",
+			config = function()
+				require("ocaml").setup()
+			end,
+		},
 		-- While the built-in completion works fine with OCaml, I prefer to use plugins like blink
 		{
 			"saghen/blink.cmp",
